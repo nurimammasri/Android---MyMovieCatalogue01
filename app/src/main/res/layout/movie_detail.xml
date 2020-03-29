@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Activity.MovieDetail">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/CollapsedAppBar"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleGravity="bottom"
+            app:expandedTitleMargin="16dp"
+            app:expandedTitleTextAppearance="@style/ExpandedAppBar"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Nur Imam Masri">
+
+            <WebView
+                android:id="@+id/youtube"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_weight="1">
+
+            </WebView>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="4dp"
+                android:theme="@style/AppTheme"
+                app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:id="@+id/back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/title"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/posterCard"
+                android:layout_width="170dp"
+                android:layout_height="258dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/main_background"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp">
+
+
+                <ImageView
+                    android:id="@+id/image_poster"
+                    android:layout_width="170dp"
+                    android:layout_height="258dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/poster_venom" />
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/layoutHeadingCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/posterCard"
+                android:layout_alignBottom="@id/posterCard"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/posterCard"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/genre"
+                    style="@style/textMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/genre"
+                    android:textColor="@color/orange" />
+
+                <TextView
+                    android:id="@+id/run_time"
+                    style="@style/textMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/genre"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/runtime"
+                    android:textColor="@color/yellow" />
+
+                <TextView
+                    android:id="@+id/year"
+                    style="@style/textMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/run_time"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/year"
+                    android:textColor="@color/blue" />
+
+                <TextView
+                    android:id="@+id/release"
+                    style="@style/textMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/year"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/release"
+                    android:textColor="@color/green" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    style="@style/textMovieDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/release"
+                    android:drawableStart="@drawable/ic_favorite_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/rate"
+                    android:textColor="@color/red"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tableItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/posterCard"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/blackTable01"
+                app:cardCornerRadius="10dp">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@color/blackTable02">
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/textTableHeaderMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/top_billed_cast" />
+
+                        <com.codesgood.views.JustifiedTextView
+                            android:id="@+id/topBilledCast"
+                            style="@style/textTableSubMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="4dp"
+                            tools:text="top Billed Cast" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/textTableHeaderMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/original_language" />
+
+                        <com.codesgood.views.JustifiedTextView
+                            android:id="@+id/originalLanguage"
+                            style="@style/textTableSubMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            tools:text="English" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/textTableHeaderMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/budget" />
+
+                        <com.codesgood.views.JustifiedTextView
+                            android:id="@+id/budget"
+                            style="@style/textTableSubMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            tools:text="$1.200.300" />
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/textTableHeaderMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/revenue" />
+
+                        <com.codesgood.views.JustifiedTextView
+                            android:id="@+id/revenue"
+                            style="@style/textTableSubMovieDetail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            tools:text="$1.200.300" />
+                    </TableRow>
+                </TableLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <com.codesgood.views.JustifiedTextView
+                android:id="@+id/overview"
+                style="@style/textMovieDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tableItem"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:text="@string/overview" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

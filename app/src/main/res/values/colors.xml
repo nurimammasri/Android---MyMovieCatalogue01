@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1B1B1B</color>
+    <color name="colorPrimaryDark">#5F5F5F</color>
+    <color name="colorAccent">#03A9F4</color>
+
+    <color name="orange">#FF9800</color>
+
+    <!--color background-->
+    <color name="black">#1B1B1B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#2B2929</color>
+
+    <color name="blackTable01">#27888888</color>
+    <color name="blackTable02">#00888888</color>
+
+    <!--color item background-->
+    <color name="blueLight">#03A9F4</color>
+
+    <!--color font-->
+    <color name="yellow">#FFEB3B</color>
+    <color name="blue">#52E8FF</color>
+    <color name="green">#03D10C</color>
+    <color name="red">#E91B25</color>
+</resources>
